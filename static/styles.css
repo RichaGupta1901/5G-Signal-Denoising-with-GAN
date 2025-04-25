@@ -1,0 +1,111 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+body {
+    background-color: #0e1117;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    padding: 30px;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Heading */
+h1 {
+    color: #43fff1;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Container */
+.container {
+    text-align: center;
+    background-color: #1e1e2f;
+    border-radius: 10px;
+    padding: 30px;
+    /* width: 100%; */
+    height: 100%;
+    max-width: 100%; /* Limit the width for larger screens */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Form Styles */
+form {
+    margin-bottom: 30px;
+}
+
+input[type="file"] {
+    background-color: #282c34;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+button {
+    background-color: #3cbadc;
+    border: none;
+    padding: 15px 30px;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #43d7ff;
+}
+
+/* Plot Section - Fix for side-by-side */
+.plot-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    max-width: 100%; /* Ensure it doesn't exceed the container width */
+}
+
+.plot {
+    background-color: #27293d;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    flex-basis: 45%;
+}
+
+h2 {
+    color: #3cebdf;
+    margin-bottom: 20px;
+}
+
+/* Download Links */
+.downloads {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.downloads a {
+    color: #43d7ff;
+    margin: 0 15px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.downloads a:hover {
+    color: #43fff1;
+}
+
+/* Error Message */
+.error {
+    color: red;
+    margin-top: 20px;
+    font-size: 18px;
+}
