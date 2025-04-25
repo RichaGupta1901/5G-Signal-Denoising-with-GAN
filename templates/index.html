@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5G GAN Signal Denoising</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>5G Signal Denoising with GAN</h1>
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="signal" required accept=".npy, .h5">
+            <button type="submit">Upload and Denoise</button>
+        </form>
+
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+
+        {% if plot_noisy or plot_denoised %}
+            <div class="plot-container">
+                {% if plot_noisy %}
+                    <div class="plot">
+                        <h2>Original (Noisy) Signal</h2>
+                        {{ plot_noisy | safe }}
+                    </div>
+                {% endif %}
+
+                {% if plot_denoised %}
+                    <div class="plot">
+                        <h2>Denoised Signal</h2>
+                        {{ plot_denoised | safe }}
+                    </div>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {% if plot_denoised %}
+            <div class="downloads">
+                <a download="denoised_output.npy" href="data:application/octet-stream;base64,{{ npy_b64 }}">Download .npy</a>
+                <a download="denoised_output.h5" href="data:application/octet-stream;base64,{{ h5_b64 }}">Download .h5</a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
