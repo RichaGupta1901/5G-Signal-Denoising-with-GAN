@@ -1,0 +1,20 @@
+# Python files
+__pycache__/
+*.py[cod]
+
+# Uploaded files
+uploads/
+*.h5
+*.npy
+
+# Model weights (if large, use cloud)
+*.pth
+
+# Environment
+.env
+venv/
+.env.local
+
+# OS generated
+.DS_Store
+Thumbs.db
